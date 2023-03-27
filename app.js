@@ -32,7 +32,7 @@ app.get("/user/:id", checkToken, async (req, res) => {
     res.status(200).json({ user })
 })
 
-function checkToken(req, res, nest) {
+function checkToken(req, res, next) {
     const authHeader = req.headers['authorization']
     const token = authHeader && authHeader.split(" ")[1]
 
